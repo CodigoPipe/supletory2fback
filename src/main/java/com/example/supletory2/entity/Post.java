@@ -22,7 +22,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idpost", nullable = false)
-    private Integer id;
+    private Integer postId;
 
     @Column(name = "title", nullable = false, length = 50)
     private String title;
@@ -37,7 +37,7 @@ public class Post {
     @JoinTable(name = "user_like_has_post",
             joinColumns = @JoinColumn(name = "post_idpost"),
             inverseJoinColumns = @JoinColumn(name = "user_like_iduser_like"))
-    private List<User> user = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     @OneToMany(mappedBy = "postIdpost")
     private List<Comment> comments = new ArrayList<>();

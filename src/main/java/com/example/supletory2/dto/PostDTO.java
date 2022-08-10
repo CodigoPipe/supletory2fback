@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class PostDTO {
 
-    private Integer id;
+    private Integer postId;
 
     private String title;
 
@@ -24,7 +24,7 @@ public class PostDTO {
 
     private Integer numberOfLikes;
 
-    private List<User> user = new ArrayList<>();
+    private List<UserDTO> users = new ArrayList<>();
 
-    private List<Comment> comments = new ArrayList<>();
+    private List<CommentDTO> comments = new ArrayList<>();
 }

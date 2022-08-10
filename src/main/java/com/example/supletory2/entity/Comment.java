@@ -23,7 +23,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idcomment", nullable = false)
-    private Integer id;
+    private Integer commentId;
 
     @Column(name = "comment_content", nullable = false)
     private String commentContent;
@@ -39,7 +39,7 @@ public class Comment {
     @JoinTable(name = "user_like_has_comment",
             joinColumns = @JoinColumn(name = "comment_idcomment"),
             inverseJoinColumns = @JoinColumn(name = "user_like_iduser_like"))
-    private List<User> user = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
 
 }

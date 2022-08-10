@@ -14,15 +14,15 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserLikeDTO {
+public class UserDTO {
 
-    private Integer id;
+    private Integer userId;
 
     private String userName;
 
     private String dni;
 
-    private List<Comment> comments = new ArrayList<>();
+    private List<CommentDTO> comments = new ArrayList<>();
 
-    private List<Post> posts = new ArrayList<>();
+    private List<PostDTO> posts = new ArrayList<>();
 }
