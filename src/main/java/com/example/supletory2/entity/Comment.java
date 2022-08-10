@@ -1,7 +1,10 @@
 package com.example.supletory2.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.LinkedHashSet;
@@ -11,6 +14,8 @@ import java.util.Set;
 @Table(name = "comment")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Comment {
 
     @Id
