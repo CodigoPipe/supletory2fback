@@ -7,7 +7,9 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -37,7 +39,7 @@ public class Comment {
     @JoinTable(name = "user_like_has_comment",
             joinColumns = @JoinColumn(name = "comment_idcomment"),
             inverseJoinColumns = @JoinColumn(name = "user_like_iduser_like"))
-    private Set<User> user = new LinkedHashSet<>();
+    private List<User> user = new ArrayList<>();
 
 
 }

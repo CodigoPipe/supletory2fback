@@ -10,4 +10,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CommentDTO {
+
+    private Integer id;
+
+    private String commentContent;
+
+    private Integer numberOfLikesComment;
+
+
 }
