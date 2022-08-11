@@ -1,4 +1,5 @@
-package com.example.supletory2.dto;
+package com.example.supletory2.dtocreate;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +10,14 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostInCommentDTO {
+public class CreatedPostDTO {
 
     private Integer postId;
 
+    private String title;
+
+    private String content;
+
+    private Integer numberOfLikes;
 
 }

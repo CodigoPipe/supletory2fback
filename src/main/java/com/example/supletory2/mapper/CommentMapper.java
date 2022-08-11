@@ -1,7 +1,6 @@
 package com.example.supletory2.mapper;
 
-import com.example.supletory2.dto.CommentDTO;
-import com.example.supletory2.dto.UserDTO;
+
 import com.example.supletory2.entity.Comment;
 import com.example.supletory2.entity.User;
 
@@ -10,13 +9,13 @@ import java.util.List;
 
 public class CommentMapper {
 
-    public static Comment returnComment(CommentDTO commentDTO){
+    /*public static Comment returnComment(CommentDTO commentDTO){
 
         Comment comment = new Comment();
         //comment.setCommentId(commentDTO.getCommentId());
         comment.setCommentContent(commentDTO.getCommentContent());
         comment.setNumberOfLikesComment(commentDTO.getNumberOfLikesComment());
-        comment.setPostIdpost(PostICDTOMapper.returnPostFromPICDTO(commentDTO.getPostIdpost()));
+        comment.setPostIdpost(CommentFrontMapper.returnPostFromPICDTO(commentDTO.getPostIdpost()));
 
         List<User> users = new ArrayList<>();
         for(UserDTO userDTO: commentDTO.getUsers()){
@@ -34,7 +33,7 @@ public class CommentMapper {
         commentDTO.setCommentId(comment.getCommentId());
         commentDTO.setCommentContent(comment.getCommentContent());
         commentDTO.setNumberOfLikesComment(comment.getNumberOfLikesComment());
-        commentDTO.setPostIdpost(PostICDTOMapper.returnPICDTOfromPost(comment.getPostIdpost()));
+        commentDTO.setPostIdpost(CommentFrontMapper.returnPICDTOfromPost(comment.getPostIdpost()));
 
         List<UserDTO> users = new ArrayList<>();
         for(User user: comment.getUsers()){
@@ -44,6 +43,6 @@ public class CommentMapper {
         commentDTO.setUsers(users);
 
         return commentDTO;
-    }
+    }*/
 
 }

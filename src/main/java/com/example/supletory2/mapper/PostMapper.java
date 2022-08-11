@@ -1,8 +1,5 @@
 package com.example.supletory2.mapper;
 
-import com.example.supletory2.dto.CommentDTO;
-import com.example.supletory2.dto.PostDTO;
-import com.example.supletory2.dto.UserDTO;
 import com.example.supletory2.entity.Comment;
 import com.example.supletory2.entity.Post;
 import com.example.supletory2.entity.User;
@@ -12,7 +9,7 @@ import java.util.List;
 
 public class PostMapper {
 
-    public static Post returnPost(PostDTO postDTO){
+    /*public static Post returnPost(PostDTO postDTO){
         Post post = new Post();
         //post.setPostId(postDTO.getPostId());
         post.setTitle(postDTO.getTitle());
@@ -55,5 +52,5 @@ public class PostMapper {
         postDTO.setComments(comments);
 
         return postDTO;
-    }
+    }*/
 }

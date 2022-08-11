@@ -1,9 +1,9 @@
 package com.example.supletory2.controller;
 
-import com.example.supletory2.dto.CommentDTO;
-import com.example.supletory2.dto.PostDTO;
+
+import com.example.supletory2.dtocreate.CreatePostDTO;
+import com.example.supletory2.dtocreate.CreatedPostDTO;
 import com.example.supletory2.entity.Comment;
-import com.example.supletory2.entity.Post;
 import com.example.supletory2.service.CommentService;
 import com.example.supletory2.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class Controller {
 
     //POST METHODS
     @GetMapping("all/posts")
-    public List<Post> getAllPosts(){
+    public List<CreatedPostDTO> getAllPosts(){
         return postService.findAllPost();
     }
 
@@ -36,8 +36,8 @@ public class Controller {
 
 
     @PostMapping("create/post")
-    public PostDTO createPost(@RequestBody PostDTO postDTO){
-        return postService.createPost(postDTO);
+    public CreatedPostDTO createPost(@RequestBody CreatePostDTO createPostDTO){
+        return postService.createPost(createPostDTO);
     }
 
     /*@PutMapping("update/post")
@@ -50,23 +50,23 @@ public class Controller {
 
     //COMMENT METHODS
 
-    @PostMapping("create/comment")
-    public CommentDTO createComment(@RequestBody CommentDTO commentDTO){
-        return commentService.createComment(commentDTO);
-    }
+    /*@PostMapping("create/comment")
+    public CommentFrontDTO createComment(@RequestBody CommentFrontDTO commentFrontDTO){
+        return commentService.createComment(commentFrontDTO);
+    }*/
 
-    @GetMapping("all/comments")
+    /*@GetMapping("all/comments")
     public List<Comment> getAllComments(){
         return commentService.findAllComments();
-    }
+    }*/
 
     /*@PutMapping("update/comment")
     public CommentUpdateDTO updateComment(@RequestBody CommentUpdateDTO commentUpdateDTO){
         return commentService.updateComment(commentUpdateDTO);
     }*/
 
-    @DeleteMapping("delete/comment/{commentId}")
+    /*@DeleteMapping("delete/comment/{commentId}")
     public void deleteCooment(@PathVariable Integer commentId){
         commentService.deleteComment(commentId);
-    }
+    }*/
 }
