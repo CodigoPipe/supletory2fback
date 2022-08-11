@@ -1,7 +1,9 @@
 package com.example.supletory2.controller;
 
 
+import com.example.supletory2.dtocreate.CreateCommentDTO;
 import com.example.supletory2.dtocreate.CreatePostDTO;
+import com.example.supletory2.dtocreate.CreatedCommentDTO;
 import com.example.supletory2.dtocreate.CreatedPostDTO;
 import com.example.supletory2.entity.Comment;
 import com.example.supletory2.service.CommentService;
@@ -50,15 +52,15 @@ public class Controller {
 
     //COMMENT METHODS
 
-    /*@PostMapping("create/comment")
-    public CommentFrontDTO createComment(@RequestBody CommentFrontDTO commentFrontDTO){
-        return commentService.createComment(commentFrontDTO);
-    }*/
+    @PostMapping("create/comment")
+    public CreatedCommentDTO createComment(@RequestBody CreateCommentDTO createCommentDTO){
+        return commentService.createComment(createCommentDTO);
+    }
 
-    /*@GetMapping("all/comments")
-    public List<Comment> getAllComments(){
+    @GetMapping("all/comments")
+    public List<CreatedCommentDTO> getAllComments(){
         return commentService.findAllComments();
-    }*/
+    }
 
     /*@PutMapping("update/comment")
     public CommentUpdateDTO updateComment(@RequestBody CommentUpdateDTO commentUpdateDTO){
