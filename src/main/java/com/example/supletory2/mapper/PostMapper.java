@@ -14,10 +14,10 @@ public class PostMapper {
 
     public static Post returnPost(PostDTO postDTO){
         Post post = new Post();
-        post.setPostId(postDTO.getPostId());
+        //post.setPostId(postDTO.getPostId());
         post.setTitle(postDTO.getTitle());
         post.setContent(postDTO.getContent());
-        post.setNumberOfLikes(postDTO.getNumberOfLikes());
+        //post.setNumberOfLikes(postDTO.getNumberOfLikes());
 
         List<User> users = new ArrayList<>();
         for(UserDTO user: postDTO.getUsers()){

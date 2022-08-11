@@ -13,7 +13,7 @@ public class CommentMapper {
     public static Comment returnComment(CommentDTO commentDTO){
 
         Comment comment = new Comment();
-        comment.setCommentId(commentDTO.getCommentId());
+        //comment.setCommentId(commentDTO.getCommentId());
         comment.setCommentContent(commentDTO.getCommentContent());
         comment.setNumberOfLikesComment(commentDTO.getNumberOfLikesComment());
         comment.setPostIdpost(PostICDTOMapper.returnPostFromPICDTO(commentDTO.getPostIdpost()));

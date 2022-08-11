@@ -1,5 +1,8 @@
 package com.example.supletory2.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerator;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +21,9 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(
+        generator= ObjectIdGenerators.PropertyGenerator.class,
+        property="commentId")
 public class Comment {
 
     @Id
@@ -29,7 +35,7 @@ public class Comment {
     private String commentContent;
 
     @Column(name = "number_of_likes_comment", nullable = false)
-    private Integer numberOfLikesComment;
+    private Integer numberOfLikesComment = 0;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "post_idpost", nullable = false)
