@@ -1,10 +1,7 @@
 package com.example.supletory2.controller;
 
 
-import com.example.supletory2.dtocreate.CreateCommentDTO;
-import com.example.supletory2.dtocreate.CreatePostDTO;
-import com.example.supletory2.dtocreate.CreatedCommentDTO;
-import com.example.supletory2.dtocreate.CreatedPostDTO;
+import com.example.supletory2.dtocreate.*;
 import com.example.supletory2.entity.Comment;
 import com.example.supletory2.service.CommentService;
 import com.example.supletory2.service.PostService;
@@ -42,10 +39,10 @@ public class Controller {
         return postService.createPost(createPostDTO);
     }
 
-    /*@PutMapping("update/post")
-    public PostUpdateDTO updatePost(@RequestBody PostUpdateDTO postUpdateDTO){
-        return postService.updatePost(postUpdateDTO);
-    }*/
+    @PutMapping("update/post")
+    public void updatePost(@RequestBody UpdatePostDTO updatePostDTO){
+        postService.updatePost(updatePostDTO);
+    }
 
 
 
