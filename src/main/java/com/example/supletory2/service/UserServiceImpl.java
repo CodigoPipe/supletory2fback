@@ -76,4 +76,12 @@ public class UserServiceImpl implements UserService{
         return createdUserInCommentDTO;
 
     }
+
+    @Override
+    public void deleteUser(Integer userId) {
+
+        User user = userRepo.findById(userId).get();
+        userRepo.delete(user);
+
+    }
 }

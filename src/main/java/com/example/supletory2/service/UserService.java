@@ -12,5 +12,7 @@ public interface UserService {
 
     CreatedUserInCommentDTO createUserInComment(CreateUserInCommentDTO createUserInCommentDTO);
 
+    void deleteUser(Integer userId);
+
 }
 

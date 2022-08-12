@@ -87,6 +87,11 @@ public class Controller {
         return userService.createUserInComment(createUserInCommentDTO);
     }
 
+    @DeleteMapping("delete/user/{userId}")
+    public void deleteUser(@PathVariable Integer userId){
+        userService.deleteUser(userId);
+    }
+
 
 
 
