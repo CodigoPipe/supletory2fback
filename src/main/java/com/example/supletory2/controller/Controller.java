@@ -59,10 +59,10 @@ public class Controller {
         return commentService.findAllComments();
     }
 
-    /*@PutMapping("update/comment")
-    public CommentUpdateDTO updateComment(@RequestBody CommentUpdateDTO commentUpdateDTO){
-        return commentService.updateComment(commentUpdateDTO);
-    }*/
+    @PutMapping("update/comment")
+    public void updateComment(@RequestBody UpdateCommentDTO updateCommentDTO){
+        commentService.updateComment(updateCommentDTO);
+    }
 
     @DeleteMapping("delete/comment/{commentId}")
     public void deleteComment(@PathVariable Integer commentId){

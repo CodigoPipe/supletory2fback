@@ -3,6 +3,7 @@ package com.example.supletory2.service;
 
 import com.example.supletory2.dtocreate.CreateCommentDTO;
 import com.example.supletory2.dtocreate.CreatedCommentDTO;
+import com.example.supletory2.dtocreate.UpdateCommentDTO;
 import com.example.supletory2.entity.Comment;
 import com.example.supletory2.entity.Post;
 import com.example.supletory2.repository.CommentRepo;
@@ -43,6 +44,16 @@ public class CommentServiceImpl implements CommentService{
         createdCommentDTO.setPostIdpost(comment1.getPostIdpost().getPostId());
 
         return createdCommentDTO;
+
+    }
+
+    @Override
+    public void updateComment(UpdateCommentDTO updateCommentDTO) {
+
+        Comment comment = commentRepo.findById(updateCommentDTO.getCommentId()).get();
+        comment.setCommentContent(updateCommentDTO.getCommentContent());
+
+        commentRepo.save(comment);
 
     }
 
