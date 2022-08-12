@@ -77,6 +77,7 @@ public class PostServiceImpl implements PostService{
 
                 comment.getUsers().forEach(user -> {
                     CommentUserListDTO commentUserListDTO = new CommentUserListDTO();
+                    commentUserListDTO.setUserId(user.getUserId());
                     commentUserListDTO.setUserName(user.getUserName());
                     commentUserListDTO.setDni(user.getDni());
 
