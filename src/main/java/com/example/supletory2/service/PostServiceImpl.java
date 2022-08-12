@@ -98,6 +98,7 @@ public class PostServiceImpl implements PostService{
                 PostUserListDTO postUserListDTO = new PostUserListDTO();
                 postUserListDTO.setUserName(user.getUserName());
                 postUserListDTO.setDni(user.getDni());
+                postUserListDTO.setUserId(user.getUserId());
 
                 postUsers.add(postUserListDTO);
             });

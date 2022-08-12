@@ -5,6 +5,7 @@ import com.example.supletory2.dtocreate.*;
 import com.example.supletory2.entity.Comment;
 import com.example.supletory2.service.CommentService;
 import com.example.supletory2.service.PostService;
+import com.example.supletory2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,9 @@ public class Controller {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private UserService userService;
 
     //POST METHODS
     @GetMapping("all/posts")
@@ -68,5 +72,15 @@ public class Controller {
     public void deleteComment(@PathVariable Integer commentId){
         commentService.deleteComment(commentId);
     }
+
+
+
+    //USER METHODS
+
+    @PostMapping("create/user/post")
+    public CreatedUserInPostDTO createdUserInPostDTO(@RequestBody CreateUserInPostDTO createUserInPostDTO){
+        return userService.createUser(createUserInPostDTO);
+    }
+
 
 }
