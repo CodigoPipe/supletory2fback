@@ -67,8 +67,9 @@ public class Controller {
         return commentService.updateComment(commentUpdateDTO);
     }*/
 
-    /*@DeleteMapping("delete/comment/{commentId}")
-    public void deleteCooment(@PathVariable Integer commentId){
+    @DeleteMapping("delete/comment/{commentId}")
+    public void deleteComment(@PathVariable Integer commentId){
         commentService.deleteComment(commentId);
-    }*/
+    }
+
 }

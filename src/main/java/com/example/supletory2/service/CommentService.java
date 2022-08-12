@@ -13,7 +13,7 @@ public interface CommentService {
 
     //CommentUpdateDTO updateComment(CommentUpdateDTO commentUpdateDTO);
 
-    /*void deleteComment(Integer commentId);*/
+    void deleteComment(Integer commentId);
 
     List<CreatedCommentDTO> findAllComments();
 }

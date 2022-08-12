@@ -14,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 public class PostCommentListDTO {
 
+    private Integer commentId;
+
     private String commentContent;
 
     private Integer numberOfLikesComment = 0;

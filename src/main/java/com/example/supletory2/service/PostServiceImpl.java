@@ -37,6 +37,9 @@ public class PostServiceImpl implements PostService{
     @Override
     public void deletePost(Integer postId) {
 
+        Post post = postRepo.findById(postId).get();
+        postRepo.delete(post);
+
     }
 
     //RETURN DTOOO
@@ -59,6 +62,7 @@ public class PostServiceImpl implements PostService{
                 PostCommentListDTO postCommentListDTO = new PostCommentListDTO();
                 postCommentListDTO.setCommentContent(comment.getCommentContent());
                 postCommentListDTO.setNumberOfLikesComment(comment.getNumberOfLikesComment());
+                postCommentListDTO.setCommentId(comment.getCommentId());
 
                 List<CommentUserListDTO> commentUsers = new ArrayList<>();
 
