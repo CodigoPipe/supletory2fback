@@ -79,8 +79,15 @@ public class Controller {
 
     @PostMapping("create/user/post")
     public CreatedUserInPostDTO createdUserInPostDTO(@RequestBody CreateUserInPostDTO createUserInPostDTO){
-        return userService.createUser(createUserInPostDTO);
+        return userService.createUserInPost(createUserInPostDTO);
     }
+
+    @PostMapping("create/user/comment")
+    public CreatedUserInCommentDTO createdUserInPostDTO(@RequestBody CreateUserInCommentDTO createUserInCommentDTO){
+        return userService.createUserInComment(createUserInCommentDTO);
+    }
+
+
 
 
 }

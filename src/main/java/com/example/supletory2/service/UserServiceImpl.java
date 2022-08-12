@@ -1,7 +1,10 @@
 package com.example.supletory2.service;
 
+import com.example.supletory2.dtocreate.CreateUserInCommentDTO;
 import com.example.supletory2.dtocreate.CreateUserInPostDTO;
+import com.example.supletory2.dtocreate.CreatedUserInCommentDTO;
 import com.example.supletory2.dtocreate.CreatedUserInPostDTO;
+import com.example.supletory2.entity.Comment;
 import com.example.supletory2.entity.Post;
 import com.example.supletory2.entity.User;
 import com.example.supletory2.repository.CommentRepo;
@@ -26,7 +29,7 @@ public class UserServiceImpl implements UserService{
     CommentRepo commentRepo;
 
     @Override
-    public CreatedUserInPostDTO createUser(CreateUserInPostDTO createUserInPostDTO) {
+    public CreatedUserInPostDTO createUserInPost(CreateUserInPostDTO createUserInPostDTO) {
 
         Post post = postRepo.findById(createUserInPostDTO.getPostIdpost()).get();
         List<Post> posts = new ArrayList<>();
@@ -47,6 +50,30 @@ public class UserServiceImpl implements UserService{
 
         return createdUserInPostDTO;
 
+
+    }
+
+    @Override
+    public CreatedUserInCommentDTO createUserInComment(CreateUserInCommentDTO createUserInCommentDTO) {
+
+        Comment comment = commentRepo.findById(createUserInCommentDTO.getCommentId()).get();
+        List<Comment> comments = new ArrayList<>();
+        comments.add(comment);
+
+        User user = new User();
+
+        user.setUserName(createUserInCommentDTO.getUserName());
+        user.setDni(createUserInCommentDTO.getDni());
+        user.setComments(comments);
+
+        userRepo.save(user);
+
+        CreatedUserInCommentDTO createdUserInCommentDTO = new CreatedUserInCommentDTO();
+        createdUserInCommentDTO.setUserId(user.getUserId());
+        createdUserInCommentDTO.setUserName(user.getUserName());
+        createdUserInCommentDTO.setDni(user.getDni());
+
+        return createdUserInCommentDTO;
 
     }
 }
